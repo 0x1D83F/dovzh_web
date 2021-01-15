@@ -1,0 +1,51 @@
+.flex{
+    display: flex;
+}
+@mixin flex_kit ($elem){
+    .#{$elem}{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.flex_kit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.full_screen{
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.just_cont_sb{
+    justify-content: space-between;
+}
+.align_items_center{
+    align-items: center;
+}
+a.def_color,
+p.def_color,
+span.def_color{
+    color: #fff;
+}
+a.project_color,
+p.project_color,
+h2.project_color{
+    color: #D3AB27;
+}
+.project_color_back{
+    background-color: #D3AB27;
+}
+.ff_gilroy,
+a.ff_gilroy{
+    font-family: 'Gilroy',sans-serif;
+}
+.ff_gilroy_i{
+    font-family: 'Gilroy_i', sans-serif;
+}
+.ff_forum{
+    font-family: 'Forum', sans-serif;
+}

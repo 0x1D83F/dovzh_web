@@ -1,0 +1,73 @@
+
+.burger{
+    position: absolute;
+    z-index: 4;
+    transform: translateY(-100%);
+    transition: transform .3s linear;
+
+
+    background-color: #000;
+
+    .burger_content{
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+
+        .burger__close{
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            right: 40px;
+            top: 40px;
+
+            .burger__button{
+                width: 35px;
+                height: 35px;
+                background: transparent;
+                transform: translateY(-50%);
+                cursor: pointer;
+            }
+
+            .burger__close_items{
+                position: relative;
+
+
+                span{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    display: inline-block;
+                    width: 40px;
+                    height: 2px;
+                    background-color: #fff;
+
+                }
+                span:first-child{
+                    transform: rotate(45deg);
+                }
+                span:last-child{
+                    transform: rotate(-45deg);
+                }
+
+            }
+        }
+        .burger_lang{
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
+        .burger__list li{
+            margin-bottom: 30px;
+        }
+        .burger__list li a,
+        .burger_lang a{
+            color: white;
+            font-size: 35px;
+        }
+    }
+}
+._active_burger{
+    transform: translateY(0%);
+    opacity: 1;
+    visibility: visible;
+}

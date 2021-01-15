@@ -1,0 +1,29 @@
+@import 'swiper.scss';
+@import 'null';
+@mixin font($font_name, $file_name, $weight, $style) {
+
+    @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-style: #{$style};
+    }
+}
+@import 'fonts';
+@import 'var';
+body{
+    font-family: Arial,Helvetica Neue, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 14px;
+    background-color: grey;
+}
+.wrapper{
+    position: relative;
+    max-width: 1920px;
+}
+@import 'burger';
+@import 'header';
+@import 'filter';
+@import 'slider';
+@import 'footer';

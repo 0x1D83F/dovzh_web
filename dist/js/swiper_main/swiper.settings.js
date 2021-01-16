@@ -1,6 +1,6 @@
 let main = new Swiper('.slider',{
     // autoplay: {
-    //     delay: 5000,
+    //     delay: 2000,
     // },
     navigation: {
         nextEl: '.swiper__next',
@@ -27,13 +27,13 @@ function arrowsHighlightForSwitch(){
         const firstSlide = document.querySelector('.swiper-pagination').firstElementChild;
         const lastSlide = document.querySelector('.swiper-pagination').lastElementChild;
 
-        if(!firstSlide.classList.contains('swiper_main-pagination-bullet-active')){
+        if(!firstSlide.classList.contains('swiper-pagination-bullet-active')){
             prevButtonPath.setAttribute('fill-opacity', '0.8')
         }else{
             prevButtonPath.setAttribute('fill-opacity', '0.3')
         }
 
-        if(!lastSlide.classList.contains('swiper_main-pagination-bullet-active')){
+        if(!lastSlide.classList.contains('swiper-pagination-bullet-active')){
             nextButtonPath.setAttribute('fill-opacity', '0.8')
         }else{
             nextButtonPath.setAttribute('fill-opacity', '0.3')
@@ -42,10 +42,6 @@ function arrowsHighlightForSwitch(){
     }
     nextButton.addEventListener('click', defineActiveSlide)
     prevButton.addEventListener('click', defineActiveSlide)
-}
-
-function arrowsHightlightForAutoPlay(){
-    let container = document.querySelector('.slider')
 }
 
 arrowsHighlightForSwitch();

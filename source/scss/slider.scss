@@ -133,12 +133,13 @@
         z-index: 3;
         //bottom: 20.28vh;
         //bottom: 15%;
-        bottom: 235px;
+        //bottom: 235px;
         right: 7.031vw;
     }
 
     //Pagination
     .swiper-pagination{
+        position: relative !important;
 
     }
     .pagination__line{
@@ -148,6 +149,9 @@
         background: rgba(255, 255, 255, 0.7) !important;
         margin-right: 2.916vw;
         border-radius: 0 !important;
+    }
+    .pagination__line:last-child{
+        margin: 0;
     }
     .pagination__line.swiper-pagination-bullet-active{
         height: 24px;
@@ -162,11 +166,10 @@
         cursor: pointer;
     }
     .swiper__prev{
-        margin-right: 9.416vw;
-
+        margin-right: 5.208vw;
     }
     .swiper__next{
-        margin-left: 9.416vw;
+        margin-left: 5.208vw;
     }
     //Slider NAv END
 

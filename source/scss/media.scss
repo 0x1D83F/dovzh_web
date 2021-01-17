@@ -57,6 +57,10 @@
     .header__nav{
         display: none;
     }
+    .slider .slide__container .slide_main__content,
+    .events-wrapper .events__container{
+        max-width: 600px;
+    }
 }
 @media (max-height: 900px){
     .slider .slide_main__content .slide_main__content-text .content-text__date span{

@@ -13,7 +13,8 @@ let main = new Swiper('.slider',{
             return '<span class="pagination__line + ' + className + '"></span>';
         },
     },
-    touchRatio: 0
+    touchRatio: 0,
+    simulateTouch: false
 })
 
 function arrowsHighlightForSwitch(){

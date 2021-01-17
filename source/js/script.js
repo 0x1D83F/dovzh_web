@@ -2,5 +2,6 @@
 @@include('./swiper_main/pagination.js');
 @@include('./swiper_main/observer.js');
 @@include('burger.js');
+@@include('image.adaptive.js');
 @@include('listeners.js');
 

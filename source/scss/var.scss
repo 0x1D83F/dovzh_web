@@ -28,6 +28,7 @@
 }
 a.def_color,
 p.def_color,
+h2.def_color,
 span.def_color{
     color: #fff;
 }
@@ -36,16 +37,44 @@ p.project_color,
 h2.project_color{
     color: #D3AB27;
 }
+.main_color,
+a.main_color{
+    color: #E1CB82;
+}
+.wspace{
+    white-space: nowrap;
+}
 .project_color_back{
     background-color: #D3AB27;
 }
 .ff_gilroy,
+p.ff_gilroy,
 a.ff_gilroy{
-    font-family: 'Gilroy',sans-serif;
+    font-family: 'Gilroy-Regular',sans-serif;
+}
+.ff_gilroy_light,
+a.ff_gilroy_light{
+    font-family: 'Gilroy-Thin', sans-serif;
 }
 .ff_gilroy_i{
-    font-family: 'Gilroy_i', sans-serif;
+    font-family: 'Gilroy-LightItalic', sans-serif;
 }
-.ff_forum{
-    font-family: 'Forum', sans-serif;
+.ff_forum,
+h2.ff_forum{
+    font-family: 'Forum-Regular', sans-serif;
+}
+.ff_tenor{
+    font-family: 'TenorSans-Regular', sans-serif;
+}
+.tt_upper,
+a.tt_upper{
+    text-transform: uppercase;
+}
+.tt_decor,
+a.tt_decor{
+    text-decoration: underline;
+}
+
+.nodisplay{
+    display: none;
 }

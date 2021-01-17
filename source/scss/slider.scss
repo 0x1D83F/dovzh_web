@@ -1,10 +1,15 @@
 .slider{
 
+
     .slide_back-image img{
         object-fit: cover;
     }
     .slide__container{
         position: relative;
+
+        .slider_content{
+            max-width: 1720px;
+        }
 
         .slide_back-image{
             position: relative;
@@ -25,18 +30,40 @@
     //Slide main
     .slide_main{
         position: absolute;
+        max-width: 1720px;
+        padding: 0 30px;
+        width: 100%;
         top: 28.57vh;
-        left: 7.032vw;
+        left: 50%;
+        transform: translateX(-50%);
+
 
         .slide_main__content{
-            margin-left: 240px;
+            margin-left: 241px;
+            width: 100%;
         }
-
+        .slider__social{
+            margin: 0 0 0 auto;
+        }
         .slide_main__type img{
             max-height: 39.571em;
         }
 
+        .slider__social-link{
+            justify-self: flex-end;
+        }
+        .slider__social-link:first-child{
+            margin-bottom: 25px;
+        }
+        .slider__social-link a svg path{
+            transition: fill .3s linear;
+        }
+        .slider__social-link a svg:hover path{
+            fill: #D3AB27;
+        }
+
     }
+
 
     .slide_main__content{
 
@@ -45,10 +72,12 @@
             .content-text__date{
                 padding: 0;
                 margin: 0;
+                user-select: text!important;
             }
             .content-text__date span{
                 font-weight: 300;
                 font-size: 2em;
+                user-select: text!important;
             }
             .content-text__title{
                 max-width: 42.5em;
@@ -64,13 +93,15 @@
                 color: #D8CDA9;
 
             }
-            .content-text__discription{
+            .content-text__discription p{
                 font-size: 1.57em;
                 line-height: 1.181em;
                 max-width: 14.72em;
             }
             .content-text__redirect-button{
-                margin-top: 170px;
+                //margin-top: 170px;
+                position: absolute;
+                bottom: 0;
             }
             .content-text__redirect-button a{
                 font-size: 1.85em;
@@ -104,7 +135,7 @@
     }
     .pagination__line{
         display: inline-block;
-        width: 1.5px;
+        width: 2px;
         height: 20px;
         background: rgba(255, 255, 255, 0.7) !important;
         margin-right: 2.916vw;
@@ -130,8 +161,5 @@
         margin-left: 9.416vw;
     }
     //Slider NAv END
-
-
-
 
 }

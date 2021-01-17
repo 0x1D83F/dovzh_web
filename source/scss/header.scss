@@ -5,7 +5,7 @@
     width: 100%;
     //background: linear-gradient(90deg, rgba(41, 22, 102, 0.8) 0%, rgba(41, 22, 102, 0.8) 77.6%, rgba(43, 29, 112, 0.8) 89.06%, rgba(41, 22, 102, 0.8) 100%);
     //backdrop-filter: blur(10px);
-    z-index: 2;
+    z-index: 4;
 
 }
 .header__container{
@@ -13,16 +13,13 @@
     padding: 0 30px;
     margin: 0 auto;
 }
+
 .header__content{
     padding: 18px 0 16px 0;
 
 }
 
-@media (max-width: 1000px){
-    .header__navigation{
-        display: none;
-    }
-}
+
 .header__navigation{
     font-size: 12px;
     text-transform: uppercase;
@@ -31,13 +28,11 @@
     margin-right: 58px;
 }
 .header__lang span{
-    font-style: normal;
     font-weight: 500;
     font-size: 12px;
     line-height: 13px;
 }
 .link_light{
-    font-style: normal;
     font-weight: 300;
     font-size: 12px;
     line-height: 14px;

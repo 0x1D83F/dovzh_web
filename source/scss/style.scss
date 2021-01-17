@@ -17,9 +17,13 @@ body{
     -webkit-font-smoothing: antialiased;
     font-size: 14px;
 }
+._lock{
+    @include o_hidden;
+}
 .wrapper{
     position: relative;
     max-width: 1920px;
+    @include o_hidden;
 }
 .ibg{
     background-position: center;

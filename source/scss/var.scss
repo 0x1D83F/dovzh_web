@@ -1,12 +1,18 @@
 .flex{
     display: flex;
 }
-@mixin flex_kit ($elem){
-    .#{$elem}{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+@mixin container{
+    max-width: 1110px;
+    margin: 0 auto;
+}
+@media (max-width: 1400px){
+    @mixin container{
+        max-width: 800px;
+        margin: 0 auto;
     }
+}
+@mixin o_hidden{
+    overflow: hidden;
 }
 .flex_kit{
     display: flex;

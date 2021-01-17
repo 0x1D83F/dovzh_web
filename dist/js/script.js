@@ -53,12 +53,10 @@ function sliderPaginationIndent(){
     let distanceToTop = button.getBoundingClientRect().top;
     if(distanceToTop >= 835) distanceToTop = 835;
 
-    let clientWindow = document.documentElement.clientHeight;
-    if(clientWindow >= 1080) clientWindow = 1080;
+    let sliderHeight = slider.offsetHeight;
 
-    let calc = clientWindow - (distanceToTop + button.offsetHeight); // 1080 - 833 + 25
+    let calc = sliderHeight - (distanceToTop + button.offsetHeight); // 1080 - 833 + 25
     pagination.style.bottom = `${calc}px`;
-
 };
 function observeSliderNav(){
     const slides = document.querySelector('.swiper-wrapper');
@@ -101,6 +99,7 @@ function observeSliderNav(){
 function burgerFunctional(){
     document.querySelector('.burger__close').classList.toggle('_open');
     document.querySelector('.burger__window').classList.toggle('_open_window')
+    document.body.classList.toggle('_lock');
 };
 function adaptiveImage(){
     let parents = document.querySelectorAll('.ibg');
@@ -114,7 +113,7 @@ function adaptiveImage(){
 }
 adaptiveImage()
 ;
-// window.addEventListener('resize', sliderPaginationIndent)
+window.addEventListener('resize', sliderPaginationIndent)
 window.addEventListener('load', sliderPaginationIndent)
 window.addEventListener('load', observeSliderNav)
 document.querySelector('.burger__close').addEventListener('click', burgerFunctional);

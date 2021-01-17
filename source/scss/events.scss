@@ -2,7 +2,6 @@
     background: url("../img/bg_main.png") 0 0 / cover no-repeat;
     background-color: #291666;
     background-blend-mode: luminosity;
-    padding: 0 30px;
 
     .events{
         .events-content_wrapper{
@@ -41,7 +40,8 @@
                 max-width: 350px;
                 height: 350px;
                 max-height: 350px;
-                flex: 33%;
+                //flex: 33%;
+                flex: 1 1 calc(100% / 3 - 60px);
 
 
                 .events__item-info__type img{
@@ -127,8 +127,6 @@
     }
 
     .events__container{
-        max-width: 1110px;
-        //padding: 0 30px;
-        margin: 0 auto;
+        @include container;
     }
 }

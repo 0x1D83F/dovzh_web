@@ -5,10 +5,8 @@ function sliderPaginationIndent(){
     let distanceToTop = button.getBoundingClientRect().top;
     if(distanceToTop >= 835) distanceToTop = 835;
 
-    let clientWindow = document.documentElement.clientHeight;
-    if(clientWindow >= 1080) clientWindow = 1080;
+    let sliderHeight = slider.offsetHeight;
 
-    let calc = clientWindow - (distanceToTop + button.offsetHeight); // 1080 - 833 + 25
+    let calc = sliderHeight - (distanceToTop + button.offsetHeight); // 1080 - 833 + 25
     pagination.style.bottom = `${calc}px`;
-
 }

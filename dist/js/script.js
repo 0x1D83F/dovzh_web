@@ -1,4 +1,4 @@
-let main = new Swiper('.slider',{
+const main = new Swiper('.slider',{
     // autoplay: {
     //     delay: 2000,
     // },
@@ -15,6 +15,15 @@ let main = new Swiper('.slider',{
     },
     touchRatio: 0,
     simulateTouch: false
+})
+
+const clubs = new Swiper('.swiper-clubs', {
+    navigation: {
+        prevEl: '.swiper-clubs-prev',
+        nextEl: '.swiper-clubs-next'
+    },
+    touchRatio: 1,
+    // simulateTouch: false
 })
 
 function arrowsHighlightForSwitch(){
@@ -50,12 +59,17 @@ function sliderPaginationIndent(){
     const button = document.querySelector('.content-text__redirect-button');
     const pagination = document.querySelector('.slider__nav')
 
-    let distanceToTop = button.getBoundingClientRect().top;
-    if(distanceToTop >= 835) distanceToTop = 835;
+    let scrollTop = document.documentElement.scrollTop;
+    let distanceToTop = button.getBoundingClientRect().top + scrollTop;
+    // let distanceToTop = button.scrollHeight;
+    // if(distanceToTop >= 835) distanceToTop = 835;
 
     let sliderHeight = document.querySelector('.slider').offsetHeight;
 
-    let calc = sliderHeight - (distanceToTop + button.offsetHeight); // 1080 - 833 + 25
+    let buttonHeight = button.offsetHeight;
+
+
+    let calc = sliderHeight - (distanceToTop + buttonHeight) ; // 531 - 380
     pagination.style.bottom = `${calc}px`;
 };
 function observeSliderNav(){
@@ -104,10 +118,12 @@ function burgerFunctional(){
 function adaptiveImage(){
     let parents = document.querySelectorAll('.ibg');
     parents.forEach(item => {
-        if(item.firstElementChild.tagName === 'IMG'){
+        if(item.firstElementChild.tagName === 'IMG' && !item.firstElementChild.classList.contains('no-linear')){
             item.style.backgroundImage =
                 `linear-gradient(180deg, #251447 0%, rgba(43, 29, 112, 0.4) 60%, rgba(37, 20, 71, 0.7) 72.4%, #251447 100%),
                  url( ${item.firstElementChild.getAttribute('src')} ) `
+        } else{
+            item.style.backgroundImage = `url( ${item.firstElementChild.getAttribute('src')} ) `
         }
     })
 }

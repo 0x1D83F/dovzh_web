@@ -10,8 +10,6 @@
         }
 
         .slide_main__content{
-            @include container;
-            //border: 3px solid black;
             position: relative;
             top: 28.57vh;
             z-index: 3;

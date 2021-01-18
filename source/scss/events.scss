@@ -1,9 +1,8 @@
 .events-wrapper{
-    background: url("../img/bg_main.png") 0 0 / cover no-repeat;
-    background-color: #291666;
-    background-blend-mode: luminosity;
+    @include back;
 
     .events{
+        padding-bottom: 87px;
         .events-content_wrapper{
             padding: 0 30px;
         }
@@ -126,7 +125,5 @@
 
     }
 
-    .events__container{
-        @include container;
-    }
+
 }

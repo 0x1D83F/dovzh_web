@@ -1,4 +1,4 @@
-let main = new Swiper('.slider',{
+const main = new Swiper('.slider',{
     // autoplay: {
     //     delay: 2000,
     // },
@@ -15,6 +15,15 @@ let main = new Swiper('.slider',{
     },
     touchRatio: 0,
     simulateTouch: false
+})
+
+const clubs = new Swiper('.swiper-clubs', {
+    navigation: {
+        prevEl: '.swiper-clubs-prev',
+        nextEl: '.swiper-clubs-next'
+    },
+    touchRatio: 1,
+    // simulateTouch: false
 })
 
 function arrowsHighlightForSwitch(){

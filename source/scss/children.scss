@@ -4,92 +4,90 @@
     .children-wrapper{
         padding: 40px 0;
 
-        .swiper-clubs{
-            max-width: 824px;
+        .children_title{
+            margin-left: 80px;
+            position: relative;
+
+            .smart-nav{
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+        }
+        .children_title h2{
+            color: #6A8FEF;
+            font-size: 4.28em;
+            line-height: 1.233em;
+            transform: translateY(-13px);
         }
 
-        .swiper-container{
-            margin-left: 0;
-        }
+        .children_info{
+            
+            .children_info-title{
+                position: relative;
+                padding-bottom: 28px;
+            }
+            .children_info-title:before{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 1px;
+                left: 0;
+                background: rgba(255, 255, 255, 0.5);
+            }
+            .children_info-title h2{
+                font-size: 1.714em;
+                font-weight: 800;
 
-        .children__info{
+            }
 
-            .children__info-main{
+            .children_info-discription{
+                margin-top: 30px;
+                margin-bottom: 5px;
+            }
+            .children_info-discription h3{
+                font-size: 1.142em;
+                line-height: 1.15em;
+            }
+            .children_info-discription p{
+                font-size: 1.28em;
+                line-height: 1.166em;
+            }
 
-                .children__info-title{
-                    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-                    padding-bottom: 28px;
+            .children_info-more{
+                margin-top: 40px;
+                .children_info-more__item{
+                    flex: 33.333%
                 }
-                .children__info-title h2{
-                    font-size: 1.714em;
-                    font-weight: 800;
+
+                .children_info-more__item h3{
+                    font-size: 1.142em;
+                    line-height: 1.15em;
+                    margin-bottom: 6px;
                 }
-                .children__info-discription{
-                    margin-top: 30px;
-                }
-                .children__info-discription h3{
-                    margin-bottom: 5px;
-                }
-                .children__info-discription p{
-                    font-size: 1.285em;
+                .children_info-more__item p{
+                    font-size: 1.28em;
                     line-height: 1.166em;
                 }
-                .children__info-options{
-                    margin-top: 35px;
-
-                    .children__info-options__item{
-                        flex: 33.333%;
-                    }
-                    .children__info-options__contacts h3,
-                    .children__info-options_age h3,
-                    .children__info-options__schelude h3{
-                        font-size: 1.142em;
-                        margin-bottom: 5px;
-                    }
-                    .children__info-options__contacts p{
-                        font-size: 1.285em;
-                    }
-                    .children__info-options__contacts p:first-of-type,
-                    .children__info-options_age p,
-                    .children__info-options__schelude p{
-                        line-height: 1.222em;
-                    }
+                .children_info-more_contacts p{
+                    line-height: 1.322em;
                 }
-
-            }
-
-            .children__info_img{
-                margin-left: 30px;
-                max-width: 255px;
-                min-width: 255px;
-            }
-
-
-        }
-
-        .children__info-nav{
-            transform: translateY(-15px);
-
-            .children__info-nav__switch{
-                margin-top: 85px;
-                justify-content: flex-end;
-
-                .swiper-clubs-prev{
-                    margin-right: 15px;
-                }
-                .swiper-clubs-next{
-                    margin-left: 15px;
-                }
-
-            }
-
-            .children__info-nav__title span{
-                font-size: 4.28em;
-                line-height: 1.233em;
-                text-align: right;
-                font-weight: 800;
-                color: #6A8FEF;
             }
         }
+        .children_image{
+            max-width: 250px;
+            max-height: 250px;
+            margin-left: 30px;
+
+        }
+        .children_image img{
+            max-width: 100%;
+            max-height: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
     }
 }
+

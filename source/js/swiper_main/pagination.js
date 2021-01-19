@@ -4,14 +4,12 @@ function sliderPaginationIndent(){
 
     let scrollTop = document.documentElement.scrollTop;
     let distanceToTop = button.getBoundingClientRect().top + scrollTop;
-    // let distanceToTop = button.scrollHeight;
-    // if(distanceToTop >= 835) distanceToTop = 835;
 
     let sliderHeight = document.querySelector('.slider').offsetHeight;
 
     let buttonHeight = button.offsetHeight;
 
 
-    let calc = sliderHeight - (distanceToTop + buttonHeight) ; // 531 - 380
+    let calc = sliderHeight - (distanceToTop + buttonHeight) ;
     pagination.style.bottom = `${calc}px`;
 }

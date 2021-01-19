@@ -17,14 +17,6 @@ const main = new Swiper('.slider',{
     simulateTouch: false
 })
 
-const clubs = new Swiper('.swiper-clubs', {
-    navigation: {
-        prevEl: '.swiper-clubs-prev',
-        nextEl: '.swiper-clubs-next'
-    },
-    touchRatio: 1,
-    // simulateTouch: false
-})
 
 function arrowsHighlightForSwitch(){
     const prevButton = document.querySelector('.swiper__prev_sett');
@@ -61,15 +53,13 @@ function sliderPaginationIndent(){
 
     let scrollTop = document.documentElement.scrollTop;
     let distanceToTop = button.getBoundingClientRect().top + scrollTop;
-    // let distanceToTop = button.scrollHeight;
-    // if(distanceToTop >= 835) distanceToTop = 835;
 
     let sliderHeight = document.querySelector('.slider').offsetHeight;
 
     let buttonHeight = button.offsetHeight;
 
 
-    let calc = sliderHeight - (distanceToTop + buttonHeight) ; // 531 - 380
+    let calc = sliderHeight - (distanceToTop + buttonHeight) ;
     pagination.style.bottom = `${calc}px`;
 };
 function observeSliderNav(){
@@ -113,6 +103,7 @@ function observeSliderNav(){
 function burgerFunctional(){
     document.querySelector('.burger__close').classList.toggle('_open');
     document.querySelector('.burger__window').classList.toggle('_open_window')
+    document.body.classList.toggle('_unlock');
     document.body.classList.toggle('_lock');
 };
 function adaptiveImage(){
@@ -129,8 +120,56 @@ function adaptiveImage(){
 }
 adaptiveImage()
 ;
+function smart() {
+    const tape = document.querySelector('.smart-tape');
+    const slide = document.querySelectorAll('.smart-slide');
+    const sliderLength = document.querySelectorAll('.smart-slide').length - 1;
+    const prev = document.querySelector('.smart-nav-prev');
+    const next = document.querySelector('.smart-nav-next')
+    tape.firstElementChild.classList.add('_active-slide')
+
+    let counter = 0;
+
+    function adaptiveHeight(){
+        const activeSlide = document.querySelector('.smart-slide._active-slide');
+        tape.style.cssText =`height: ${activeSlide.offsetHeight}px`
+    }
+    adaptiveHeight();
+
+    slide.forEach((slide,index) => {
+        if(index !== 0){
+            slide.style.transform = `translateX(${index * 105}%)`
+        }
+    })
+
+    next.addEventListener('click', () => {
+        adaptiveHeight()
+        counter++;
+        if(counter >= sliderLength) counter = sliderLength;
+        if(counter === 0){
+            tape.style.transform = `translate3d(-105%,0,0)`
+        } else {
+            tape.style.transform = `translate3d(-${counter * 105}%,0,0) `
+        }
+    })
+
+    prev.addEventListener('click', () => {
+        adaptiveHeight();
+        counter--;
+        if(counter < 0 ) counter = 0;
+        if(counter === 1){
+            tape.style.transform = `translate3d(-105%,0,0)`
+        } else {
+            tape.style.transform = `translate3d(-${counter * 105}%,0,0)`
+        }
+
+    })
+}
+;
 window.addEventListener('resize', sliderPaginationIndent)
 window.addEventListener('load', sliderPaginationIndent)
 window.addEventListener('load', observeSliderNav)
+window.addEventListener('load', smart)
+window.addEventListener('resize', smart)
 document.querySelector('.burger__close').addEventListener('click', burgerFunctional);
 

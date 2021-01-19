@@ -1,4 +1,6 @@
 window.addEventListener('resize', sliderPaginationIndent)
 window.addEventListener('load', sliderPaginationIndent)
 window.addEventListener('load', observeSliderNav)
+window.addEventListener('load', smart)
+window.addEventListener('resize', smart)
 document.querySelector('.burger__close').addEventListener('click', burgerFunctional)

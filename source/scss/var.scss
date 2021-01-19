@@ -1,11 +1,7 @@
-
 .flex{
     display: flex;
 }
-@mixin container{
-    max-width: 1110px;
-    margin: 0 auto;
-}
+
 @mixin o_hidden{
     overflow: hidden;
 }
@@ -31,6 +27,12 @@
 }
 .align_items_center{
     align-items: center;
+}
+
+p.fw_bold,
+h2.fw_bold,
+a.fw_bold{
+    font-weight: 800;
 }
 a.def_color,
 p.def_color,

@@ -17,14 +17,6 @@ const main = new Swiper('.slider',{
     simulateTouch: false
 })
 
-const clubs = new Swiper('.swiper-clubs', {
-    navigation: {
-        prevEl: '.swiper-clubs-prev',
-        nextEl: '.swiper-clubs-next'
-    },
-    touchRatio: 1,
-    // simulateTouch: false
-})
 
 function arrowsHighlightForSwitch(){
     const prevButton = document.querySelector('.swiper__prev_sett');

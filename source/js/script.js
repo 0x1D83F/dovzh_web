@@ -3,5 +3,6 @@
 @@include('./swiper_main/observer.js');
 @@include('burger.js');
 @@include('image.adaptive.js');
+@@include('smart.js');
 @@include('listeners.js');
 

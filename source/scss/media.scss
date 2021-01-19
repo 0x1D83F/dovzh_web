@@ -20,13 +20,21 @@
     }
 }
 @media (max-width: 1400px){
-    .slider .slide__container .slide_main__content,
-    .events-wrapper .events__container{
-        max-width: 800px;
+    ._container{
+        max-width: 900px;
     }
-    //.children .children-wrapper{
-    //    max-width: 860px;
-    //}
+
+    .events-wrapper .events .events__content .events__item{
+        height: 280px;
+        max-height: 280px;
+    }
+    .children .children-wrapper .children__info .children__info_img{
+        max-width: 200px;
+        min-width: 200px;
+    }
+    .children .children-wrapper .children__info-nav .children__info-nav__title span{
+        font-size: 3.6em;
+    }
     .events-wrapper .events .events__content .events__item .events__item-info .events__item-info__title h2{
         font-size: 1.5em;
     }
@@ -36,6 +44,27 @@
     .events-wrapper .events .events__content .events__item .events__item-info{
         padding: 17px 15px 17px 15px;
     }
+    .children .children-wrapper .children_title{
+        margin-left: 40px;
+    }
+    .children .children-wrapper .children_info .children_info-title h2{
+        font-size: 1.414em;
+    }
+    .children .children-wrapper .children_info .children_info-discription p{
+        font-size: .9em;
+    }
+    .children .children-wrapper .children_info .children_info-more .children_info-more_contacts p{
+        font-size: 1.022em;
+    }
+    .children .children-wrapper .children_info .children_info-more .children_info-more__item p{
+        font-size: 1em;
+    }
+    .children .children-wrapper .children_title h2{
+        font-size: 3.5em;
+    }
+    .children .children-wrapper .children_title .smart-nav-element svg{
+        width: 52px;
+    }
     //.events-wrapper .events .events__content .events__item{
     //    flex: 50%;
     //    margin-right: 0;
@@ -43,6 +72,15 @@
     //.events-wrapper .events .events__content .events__item:nth-child(odd){
     //    margin-right: 30px;
     //}
+}
+@media (max-width: 1200px){
+    ._container{
+        max-width: 800px;
+    }
+    .events-wrapper .events .events__content .events__item{
+        height: 246px;
+        max-height: 246px;
+    }
 }
 @media (max-width: 1100px){
     .slider .swiper__prev_sett {

@@ -19,6 +19,7 @@
             font-size: 4.28em;
             line-height: 1.233em;
             transform: translateY(-13px);
+            font-family: 'Gilroy-Bold', sans-serif;
         }
 
         .children_info{
@@ -82,10 +83,8 @@
 
         }
         .children_image img{
-            max-width: 100%;
-            max-height: 100%;
+            @include image;
             height: 100%;
-            object-fit: cover;
         }
 
     }

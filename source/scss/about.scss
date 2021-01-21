@@ -1,0 +1,105 @@
+.about{
+    background: linear-gradient(180deg, #291666 0%, #251447 100%);
+    padding: 80px 0 0px 0;
+    position: relative;
+
+    .about_line{
+        background: rgba(255, 255, 255, 0.15);
+        height: 1px;
+        width: 100%;
+    }
+
+    .about-header{
+        padding-left: 93px;
+
+        h2{
+            @include big_title;
+        }
+        .about-header_abb{
+            align-self: flex-end;
+
+            p{
+                font-size: 1.428em;
+                line-height: 1.25em;
+                text-transform: capitalize;
+            }
+            p:last-child{
+                line-height: normal;
+            }
+        }
+
+    }
+
+    .about-content{
+        padding-left: 93px;
+
+        .about-content__slider{
+            margin-top: 86px;
+            @include o_hidden;
+
+            .about-content__slider-info{
+                margin-left: 30px;
+                align-self: flex-end;
+
+                .slider-info__main {
+                    margin-bottom: 6px;
+                    p{
+                        font-size: 1.428em;
+                        line-height: 1.15em;
+                    }
+
+                }
+                .slider-info__discription{
+
+                    p{
+                        font-size: 1.142em;
+                        line-height: 1.125em;
+                    }
+
+                }
+            }
+        }
+
+        .about-content__info{
+            margin-top: 15px;
+
+
+            .about-content__info-title{
+                margin-bottom: 33px;
+
+            }
+            .about-content__info-title h2,
+            .about-content__info-disc p{
+                font-size: 1.142em;
+                line-height: 1.187em;
+                color: rgba(255, 255, 255, 0.9);
+            }
+            .about-content__info-disc{
+                max-width: 420px;
+                margin-bottom: 81px;
+            }
+            .about-content__info_img{
+                max-width: 445px;
+                height: 256px;
+            }
+            .about-content__info_img img{
+                //@include image;
+            }
+        }
+
+        .about-nav{
+            margin-top: 45px;
+
+            .about-nav-arrow{
+                cursor: pointer;
+            }
+            .about-nav-prev{
+                margin-right: 32.5px;
+            }
+            .about-nav-next{
+                margin-left: 32.5px;
+            }
+
+        }
+    }
+}

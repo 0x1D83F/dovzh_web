@@ -4,8 +4,14 @@
     height: 100vh;
     top: -100%;
     z-index: 3;
-    background: #000;
+    //background: rgba(43, 29, 112, 0.9);
+    background: linear-gradient(90deg, rgba(41, 22, 102, 0.8) 0%, rgba(41, 22, 102, 0.8) 77.6%, rgba(43, 29, 112, 0.8) 89.06%, rgba(41, 22, 102, 0.8) 100%);
     transition: top .3s;
+
+
+    .burger__window:before{
+
+    }
     ul li{
         margin-bottom: 15px;
     }
@@ -13,7 +19,14 @@
         color: white;
         font-size: 35px;
     }
+
 }
 ._open_window{
     top: 0;
+}
+
+@supports (backdrop-filter: blur()) {
+    .burger__window{
+        backdrop-filter: blur(10px);
+    }
 }

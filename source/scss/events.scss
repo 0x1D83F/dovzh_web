@@ -10,21 +10,11 @@
             padding-top: 77px;
             position: relative;
 
-            &:before{
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                height: 1px;
-                width: 100%;
-                background-color: rgba(255, 255, 255, 0.15);
-            }
+
             .events_header_title{
             }
             .events_header_title h2{
-                font-size: 4.28em;
-                text-decoration-line: line-through;
-                transform: translateY(10px);
+               @include big_title;
             }
         }
         .events__content{

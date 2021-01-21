@@ -17,6 +17,13 @@ const main = new Swiper('.slider',{
     simulateTouch: false
 })
 
+const about = new Swiper('.slider-about', {
+    navigation: {
+        nextEl: '.about-nav-next',
+        prevEl: '.about-nav-prev'
+    },
+})
+
 
 function arrowsHighlightForSwitch(){
     const prevButton = document.querySelector('.swiper__prev_sett');

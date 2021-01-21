@@ -1,4 +1,4 @@
-@import 'swiper.scss';
+@import 'swiper.min.scss';
 @import 'null';
 @mixin font($font_name, $file_name, $weight, $style) {
 
@@ -15,11 +15,11 @@
 body{
     font-family: Arial,Helvetica Neue, Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
-
     font-size: 14px;
+    background-color: #291666;
 }
 ._container{
-    max-width: 1110px ;
+    max-width: 1110px;
     margin: 0 auto;
 }
 ._lock{
@@ -32,9 +32,12 @@ body{
 }
 .wrapper{
     position: relative;
-    //max-width: 1920px;
     max-width: 100vw;
     @include o_hidden;
+
+}
+._blur{
+    filter: blur(10px);
 }
 .ibg{
     background-position: center;

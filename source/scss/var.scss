@@ -37,6 +37,9 @@
 .just_cont_sb{
     justify-content: space-between;
 }
+.just_cont_c{
+    justify-content: center;
+}
 .align_items_center{
     align-items: center;
 }
@@ -56,7 +59,7 @@ span.def_color{
 a.project_color,
 p.project_color,
 h2.project_color{
-    color: #D3AB27;
+    color: #D3AB27 !important;
 }
 .main_color,
 a.main_color{

@@ -25,35 +25,35 @@ const about = new Swiper('.slider-about', {
 })
 
 
-function arrowsHighlightForSwitch(){
-    const prevButton = document.querySelector('.swiper__prev_sett');
-    const nextButton = document.querySelector('.swiper__next_sett');
-
-    let prevButtonPath = document.querySelector('.swiper__prev_sett svg path');
-    let nextButtonPath = document.querySelector('.swiper__next_sett svg path');
-
-    function defineActiveSlide(){
-        const firstSlide = document.querySelector('.swiper-pagination').firstElementChild;
-        const lastSlide = document.querySelector('.swiper-pagination').lastElementChild;
-
-        if(!firstSlide.classList.contains('swiper-pagination-bullet-active')){
-            prevButtonPath.setAttribute('fill-opacity', '0.8')
-        }else{
-            prevButtonPath.setAttribute('fill-opacity', '0.3')
-        }
-
-        if(!lastSlide.classList.contains('swiper-pagination-bullet-active')){
-            nextButtonPath.setAttribute('fill-opacity', '0.8')
-        }else{
-            nextButtonPath.setAttribute('fill-opacity', '0.3')
-        }
-
-    }
-    nextButton.addEventListener('click', defineActiveSlide)
-    prevButton.addEventListener('click', defineActiveSlide)
-}
-
-arrowsHighlightForSwitch();;
+// function arrowsHighlightForSwitch(){
+//     const prevButton = document.querySelector('.swiper__prev_sett');
+//     const nextButton = document.querySelector('.swiper__next_sett');
+//
+//     let prevButtonPath = document.querySelector('.swiper__prev_sett svg path');
+//     let nextButtonPath = document.querySelector('.swiper__next_sett svg path');
+//
+//     function defineActiveSlide(){
+//         const firstSlide = document.querySelector('.swiper-pagination').firstElementChild;
+//         const lastSlide = document.querySelector('.swiper-pagination').lastElementChild;
+//
+//         if(!firstSlide.classList.contains('swiper-pagination-bullet-active')){
+//             prevButtonPath.setAttribute('fill-opacity', '0.8')
+//         }else{
+//             prevButtonPath.setAttribute('fill-opacity', '0.3')
+//         }
+//
+//         if(!lastSlide.classList.contains('swiper-pagination-bullet-active')){
+//             nextButtonPath.setAttribute('fill-opacity', '0.8')
+//         }else{
+//             nextButtonPath.setAttribute('fill-opacity', '0.3')
+//         }
+//
+//     }
+//     nextButton.addEventListener('click', defineActiveSlide)
+//     prevButton.addEventListener('click', defineActiveSlide)
+// }
+//
+// arrowsHighlightForSwitch();;
 function sliderPaginationIndent(){
     const button = document.querySelector('.content-text__redirect-button');
     const pagination = document.querySelector('.slider__nav')
@@ -69,10 +69,10 @@ function sliderPaginationIndent(){
     let calc = sliderHeight - (distanceToTop + buttonHeight) ;
     pagination.style.bottom = `${calc}px`;
 };
-function observeSliderNav(){
-    const slides = document.querySelector('.swiper-wrapper');
-    const prevButtonPath = document.querySelector('.swiper__prev_sett svg path');
-    const nextButtonPath = document.querySelector('.swiper__next_sett svg path');
+function observeSliderNav(wrapperClass, prevButtonClass, nextButtonClass){
+    const slides = document.querySelector(`.${wrapperClass}`);
+    const prevButtonPath = document.querySelector(`.${prevButtonClass} svg path`);
+    const nextButtonPath = document.querySelector(`.${nextButtonClass} svg path`);
 
     let observer = new MutationObserver( old => {
         let childs = slides.childNodes;
@@ -109,7 +109,8 @@ function observeSliderNav(){
 ;
 function burgerFunctional(){
     document.querySelector('.burger__close').classList.toggle('_open');
-    document.querySelector('.burger__window').classList.toggle('_open_window')
+    document.querySelector('.burger__window').classList.toggle('_open_window');
+    document.querySelector('.wrapper-content').classList.toggle('_blur');
     document.body.classList.toggle('_unlock');
     document.body.classList.toggle('_lock');
 };
@@ -175,7 +176,10 @@ function smart() {
 ;
 window.addEventListener('resize', sliderPaginationIndent)
 window.addEventListener('load', sliderPaginationIndent)
-window.addEventListener('load', observeSliderNav)
+window.addEventListener('load', () => {
+    observeSliderNav('swiper-wrapper', 'swiper__prev_sett ', 'swiper__next_sett' );
+    observeSliderNav('swiper-wrapper-about', 'about-nav-prev', 'about-nav-next' );
+})
 window.addEventListener('load', smart)
 window.addEventListener('resize', smart)
 document.querySelector('.burger__close').addEventListener('click', burgerFunctional);

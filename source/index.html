@@ -10,16 +10,17 @@
     </head>
 
     <body class="_unlock">
-        <div class="wrapper">
-            @@include('_header.html')
-            @@include('_burger.html')
-            @@include('_burger_window.html')
+    <noscript>У вашому браузері вимкнено або відсутня підтримка скриптів! Без скриптів сайт буде працювати некоректно!</noscript>
+    <div class="wrapper">
+        @@include('_burger_window.html')
+        @@include('_header.html')
+        <div class="wrapper-content">
             @@include('_slider.html')
             @@include('_events.html')
             @@include('_children.html')
             @@include('_about.html')
-<!--            @@include('_footer.html')-->
         </div>
+    </div>
         <script src='js/swiper_main/swiper.min.js'></script>
         <script src='js/script.js'></script>
     </body>

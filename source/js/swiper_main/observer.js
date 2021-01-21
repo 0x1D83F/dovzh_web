@@ -1,7 +1,7 @@
-function observeSliderNav(){
-    const slides = document.querySelector('.swiper-wrapper');
-    const prevButtonPath = document.querySelector('.swiper__prev_sett svg path');
-    const nextButtonPath = document.querySelector('.swiper__next_sett svg path');
+function observeSliderNav(wrapperClass, prevButtonClass, nextButtonClass){
+    const slides = document.querySelector(`.${wrapperClass}`);
+    const prevButtonPath = document.querySelector(`.${prevButtonClass} svg path`);
+    const nextButtonPath = document.querySelector(`.${nextButtonClass} svg path`);
 
     let observer = new MutationObserver( old => {
         let childs = slides.childNodes;

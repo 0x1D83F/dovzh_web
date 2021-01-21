@@ -95,7 +95,8 @@
     }
 }
 @media (max-width: 1000px){
-    .header__nav{
+    .header__nav,
+    .header__lang{
         display: none;
     }
     .slider .slide__container .slide_main__content,

@@ -1,0 +1,3 @@
+login: alexandrmerniy@gmail.com
+pass: 
+wp-admin: dovzhenko-center

@@ -172,7 +172,7 @@ function watchFiles(params) {
     gulp.watch([path.watch.img], images)
 }
 
-let build = gulp.series(deleteFolderDist, gulp.parallel(js, css, html, images, livefonts), fontsStyle)
+let build = gulp.series(deleteFolderDist, gulp.parallel(js, css, html, images, livefonts),fontsStyle)
 let watch = gulp.parallel(build, watchFiles, synchro);
 
 exports.fontsStyle = fontsStyle;

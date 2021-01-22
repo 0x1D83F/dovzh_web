@@ -25,35 +25,9 @@ const about = new Swiper('.slider-about', {
 })
 
 
-// function arrowsHighlightForSwitch(){
-//     const prevButton = document.querySelector('.swiper__prev_sett');
-//     const nextButton = document.querySelector('.swiper__next_sett');
-//
-//     let prevButtonPath = document.querySelector('.swiper__prev_sett svg path');
-//     let nextButtonPath = document.querySelector('.swiper__next_sett svg path');
-//
-//     function defineActiveSlide(){
-//         const firstSlide = document.querySelector('.swiper-pagination').firstElementChild;
-//         const lastSlide = document.querySelector('.swiper-pagination').lastElementChild;
-//
-//         if(!firstSlide.classList.contains('swiper-pagination-bullet-active')){
-//             prevButtonPath.setAttribute('fill-opacity', '0.8')
-//         }else{
-//             prevButtonPath.setAttribute('fill-opacity', '0.3')
-//         }
-//
-//         if(!lastSlide.classList.contains('swiper-pagination-bullet-active')){
-//             nextButtonPath.setAttribute('fill-opacity', '0.8')
-//         }else{
-//             nextButtonPath.setAttribute('fill-opacity', '0.3')
-//         }
-//
-//     }
-//     nextButton.addEventListener('click', defineActiveSlide)
-//     prevButton.addEventListener('click', defineActiveSlide)
-// }
-//
-// arrowsHighlightForSwitch();;
+
+// const sliderChilds = highlightSlidersArrows('swiper-wrapper-about', 'about-nav-prev', 'about-nav-next' );
+// const sliderAbout = highlightSlidersArrows('smart-tape', 'smart-nav-prev', 'smart-nav-next' );
 function sliderPaginationIndent(){
     const button = document.querySelector('.content-text__redirect-button');
     const pagination = document.querySelector('.slider__nav')
@@ -68,7 +42,7 @@ function sliderPaginationIndent(){
 
     let calc = sliderHeight - (distanceToTop + buttonHeight) ;
     pagination.style.bottom = `${calc}px`;
-};
+}
 function observeSliderNav(wrapperClass, prevButtonClass, nextButtonClass){
     const slides = document.querySelector(`.${wrapperClass}`);
     const prevButtonPath = document.querySelector(`.${prevButtonClass} svg path`);
@@ -81,9 +55,10 @@ function observeSliderNav(wrapperClass, prevButtonClass, nextButtonClass){
         childs.forEach(item => {
             if(item.localName === 'div') slidesArray.push(item)
         })
+        console.log(slidesArray)
 
         slidesArray.forEach((item,index) => {
-            if(item.classList.contains('swiper-slide-active') ){
+            if(item.classList.contains('swiper-slide-active') || item.classList.contains('smart-active')){
                 if(index === 0){
                     prevButtonPath.setAttribute('fill-opacity', '0.3')
                     nextButtonPath.setAttribute('fill-opacity', '0.8')
@@ -106,14 +81,14 @@ function observeSliderNav(wrapperClass, prevButtonClass, nextButtonClass){
         attributes: true
     })
 }
-;
+
 function burgerFunctional(){
     document.querySelector('.burger__close').classList.toggle('_open');
     document.querySelector('.burger__window').classList.toggle('_open_window');
     document.querySelector('.wrapper-content').classList.toggle('_blur');
     document.body.classList.toggle('_unlock');
     document.body.classList.toggle('_lock');
-};
+}
 function adaptiveImage(){
     let parents = document.querySelectorAll('.ibg');
     parents.forEach(item => {
@@ -127,22 +102,42 @@ function adaptiveImage(){
     })
 }
 adaptiveImage()
-;
+
 function smart() {
     const tape = document.querySelector('.smart-tape');
     const slide = document.querySelectorAll('.smart-slide');
     const sliderLength = document.querySelectorAll('.smart-slide').length - 1;
     const prev = document.querySelector('.smart-nav-prev');
     const next = document.querySelector('.smart-nav-next')
-    tape.firstElementChild.classList.add('_active-slide')
+    tape.firstElementChild.classList.add('smart-first', 'smart-active')
 
     let counter = 0;
 
     function adaptiveHeight(){
-        const activeSlide = document.querySelector('.smart-slide._active-slide');
+        const activeSlide = document.querySelector('.smart-slide.smart-first');
         tape.style.cssText =`height: ${activeSlide.offsetHeight}px`
     }
     adaptiveHeight();
+
+    function setActiveSlide(){
+        // Ищем элемент и удаляем у него активный класс
+        function removeClass(){
+            for (let children of tape.children) {
+                if(children.classList.contains('smart-active')) {
+                    children.classList.remove('smart-active')
+                }
+            }
+        }
+        // Если это первый элемент
+        if( counter <= 0) {
+            removeClass()
+            tape.children[counter].classList.add('smart-active')
+        } else{
+            removeClass()
+            tape.children[counter].classList.add('smart-active')
+        }
+
+    }
 
     slide.forEach((slide,index) => {
         if(index !== 0){
@@ -153,7 +148,10 @@ function smart() {
     next.addEventListener('click', () => {
         adaptiveHeight()
         counter++;
+
         if(counter >= sliderLength) counter = sliderLength;
+        setActiveSlide();
+
         if(counter === 0){
             tape.style.transform = `translate3d(-105%,0,0)`
         } else {
@@ -164,23 +162,27 @@ function smart() {
     prev.addEventListener('click', () => {
         adaptiveHeight();
         counter--;
+
         if(counter < 0 ) counter = 0;
+        setActiveSlide();
+        
         if(counter === 1){
             tape.style.transform = `translate3d(-105%,0,0)`
         } else {
             tape.style.transform = `translate3d(-${counter * 105}%,0,0)`
         }
-
     })
 }
-;
+
 window.addEventListener('resize', sliderPaginationIndent)
+window.addEventListener('resize', smart)
 window.addEventListener('load', sliderPaginationIndent)
 window.addEventListener('load', () => {
-    observeSliderNav('swiper-wrapper', 'swiper__prev_sett ', 'swiper__next_sett' );
-    observeSliderNav('swiper-wrapper-about', 'about-nav-prev', 'about-nav-next' );
+    // observeSliderNav('swiper-wrapper', 'swiper__prev_sett ', 'swiper__next_sett' );
+    // observeSliderNav('swiper-wrapper-about', 'about-nav-prev', 'about-nav-next' );
+    // observeSliderNav('smart-tape', 'smart-nav-prev', 'smart-nav-next' );
 })
+
 window.addEventListener('load', smart)
-window.addEventListener('resize', smart)
-document.querySelector('.burger__close').addEventListener('click', burgerFunctional);
+document.querySelector('.burger__close').addEventListener('click', burgerFunctional)
 

@@ -94,14 +94,39 @@
         width: 110px;
     }
 }
-@media (max-width: 1000px){
+@media (max-width: 1024px){
     .header__nav,
-    .header__lang{
+    .header__lang,
+    .slider__social,
+    .slide_main__type{
         display: none;
     }
     .slider .slide__container .slide_main__content,
     .events-wrapper .events__container{
-        max-width: 600px;
+        max-width: 100%;
+    }
+    .slider .slide__container .slide_main__content{
+        padding: 0 30px;
+    }
+    .events-wrapper .events__container{
+        padding: 0 60px;
+    }
+    .slider-main .slide__container .slide_main__content .slide_main__content-type,
+    .header__burger{
+        display: block;
+    }
+    .header__content{
+        align-items: flex-end;
+    }
+    .slider-main .slide__container .slide_main__content{
+        top: 16vh;
+    }
+    .slider__nav{
+        display: none;
+    }
+    .slider-nav-mobile{
+        display: flex;
+        margin-top: 148px;
     }
 }
 @media (max-height: 900px){

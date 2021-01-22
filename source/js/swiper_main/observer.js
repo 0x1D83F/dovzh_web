@@ -10,9 +10,10 @@ function observeSliderNav(wrapperClass, prevButtonClass, nextButtonClass){
         childs.forEach(item => {
             if(item.localName === 'div') slidesArray.push(item)
         })
+        console.log(slidesArray)
 
         slidesArray.forEach((item,index) => {
-            if(item.classList.contains('swiper-slide-active') ){
+            if(item.classList.contains('swiper-slide-active') || item.classList.contains('smart-active')){
                 if(index === 0){
                     prevButtonPath.setAttribute('fill-opacity', '0.3')
                     nextButtonPath.setAttribute('fill-opacity', '0.8')

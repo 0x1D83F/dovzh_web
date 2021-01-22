@@ -13,6 +13,13 @@
             position: relative;
             top: 28.57vh;
             z-index: 3;
+
+            .slide_main__content-type{
+                margin-bottom: 94px;
+            }
+            .slide_main__content-type img{
+                max-width: 554px;
+            }
         }
 
         .slider_content{
@@ -94,7 +101,6 @@
                 max-width: 42.5em;
                 font-weight: 300;
                 text-transform: uppercase;
-                font-family: 'Tenor Sans', sans-serif;
                 color: #D8CDA9;
 
             }

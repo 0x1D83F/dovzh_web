@@ -97,12 +97,20 @@
                         font-size: 1em;
                         line-height: 1.142em;
                     }
-                    .events__item-additional__line{
-                        margin: 152px 0 25px 0;
+                    //152
+                    .events__item-additional-link{
+                        position: absolute;
                         width: 100%;
-                        height: 1px;
-                        background-color: rgba(255, 255, 255, 0.3);
+                        bottom: 0;
+                        margin: 0px 25px 25px 0;
+                        .events__item-additional__line{
+                            margin-bottom: 25px;
+                            width: calc(100% - 54px);
+                            height: 1px;
+                            background-color: rgba(255, 255, 255, 0.3);
+                        }
                     }
+
                 }
                 &:hover .events__item-additional{
                     transform: translateY(0%);

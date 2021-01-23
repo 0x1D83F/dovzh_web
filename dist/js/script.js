@@ -44,16 +44,18 @@ function sliderPaginationIndent(){
     function desktopPagination(){
         let distanceToTop = button.getBoundingClientRect().top + scrollTop;
         let buttonHeight = button.offsetHeight;
-
         let calc = sliderHeight - (distanceToTop + buttonHeight);
-        setPaginationIndent(calc);
+        return calc
+    }
+    function mobilePagination(){
+
     }
 
 
     if(clientWidth > 1024){
-        desktopPagination()
-    } else{
-        setPaginationIndent(83);
+        setPaginationIndent( desktopPagination() )
+    }  else{
+        setPaginationIndent(90);
     }
 
 

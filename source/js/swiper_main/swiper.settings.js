@@ -14,7 +14,8 @@ const main = new Swiper('.slider',{
         },
     },
     touchRatio: 0,
-    simulateTouch: false
+    simulateTouch: false,
+    loop: true
 })
 
 const about = new Swiper('.slider-about', {
@@ -22,6 +23,7 @@ const about = new Swiper('.slider-about', {
         nextEl: '.about-nav-next',
         prevEl: '.about-nav-prev'
     },
+    spaceBetween: 150
 })
 
 

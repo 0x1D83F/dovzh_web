@@ -14,7 +14,8 @@ const main = new Swiper('.slider',{
         },
     },
     touchRatio: 0,
-    simulateTouch: false
+    simulateTouch: false,
+    loop: true
 })
 
 const about = new Swiper('.slider-about', {
@@ -22,6 +23,7 @@ const about = new Swiper('.slider-about', {
         nextEl: '.about-nav-next',
         prevEl: '.about-nav-prev'
     },
+    spaceBetween: 150
 })
 
 
@@ -31,57 +33,31 @@ const about = new Swiper('.slider-about', {
 function sliderPaginationIndent(){
     const button = document.querySelector('.content-text__redirect-button');
     const pagination = document.querySelector('.slider__nav')
+    const clientWidth = document.documentElement.clientWidth || window.innerWidth;
+    const scrollTop = document.documentElement.scrollTop;
+    const sliderHeight = document.querySelector('.slider').offsetHeight;
 
-    let scrollTop = document.documentElement.scrollTop;
-    let distanceToTop = button.getBoundingClientRect().top + scrollTop;
+    function setPaginationIndent(value){
+        pagination.style.bottom = `${value}px`;
+    }
 
-    let sliderHeight = document.querySelector('.slider').offsetHeight;
+    function desktopPagination(){
+        let distanceToTop = button.getBoundingClientRect().top + scrollTop;
+        let buttonHeight = button.offsetHeight;
 
-    let buttonHeight = button.offsetHeight;
+        let calc = sliderHeight - (distanceToTop + buttonHeight);
+        setPaginationIndent(calc);
+    }
 
 
-    let calc = sliderHeight - (distanceToTop + buttonHeight) ;
-    pagination.style.bottom = `${calc}px`;
+    if(clientWidth > 1024){
+        desktopPagination()
+    } else{
+        setPaginationIndent(83);
+    }
+
+
 }
-function observeSliderNav(wrapperClass, prevButtonClass, nextButtonClass){
-    const slides = document.querySelector(`.${wrapperClass}`);
-    const prevButtonPath = document.querySelector(`.${prevButtonClass} svg path`);
-    const nextButtonPath = document.querySelector(`.${nextButtonClass} svg path`);
-
-    let observer = new MutationObserver( old => {
-        let childs = slides.childNodes;
-        let slidesArray = [];
-
-        childs.forEach(item => {
-            if(item.localName === 'div') slidesArray.push(item)
-        })
-        console.log(slidesArray)
-
-        slidesArray.forEach((item,index) => {
-            if(item.classList.contains('swiper-slide-active') || item.classList.contains('smart-active')){
-                if(index === 0){
-                    prevButtonPath.setAttribute('fill-opacity', '0.3')
-                    nextButtonPath.setAttribute('fill-opacity', '0.8')
-                }
-                else if(index !== 0){
-                    prevButtonPath.setAttribute('fill-opacity', '0.8')
-                    nextButtonPath.setAttribute('fill-opacity', '0.8')
-                }
-                if(index === slidesArray.length - 1){
-                    nextButtonPath.setAttribute('fill-opacity', '0.3')
-                }
-            }
-        })
-    })
-
-    observer.observe(slides, {
-        childList: true,
-        subtree: true,
-        characterData: true,
-        attributes: true
-    })
-}
-
 function burgerFunctional(){
     document.querySelector('.burger__close').classList.toggle('_open');
     document.querySelector('.burger__window').classList.toggle('_open_window');
@@ -178,9 +154,7 @@ window.addEventListener('resize', sliderPaginationIndent)
 window.addEventListener('resize', smart)
 window.addEventListener('load', sliderPaginationIndent)
 window.addEventListener('load', () => {
-    // observeSliderNav('swiper-wrapper', 'swiper__prev_sett ', 'swiper__next_sett' );
-    // observeSliderNav('swiper-wrapper-about', 'about-nav-prev', 'about-nav-next' );
-    // observeSliderNav('smart-tape', 'smart-nav-prev', 'smart-nav-next' );
+
 })
 
 window.addEventListener('load', smart)

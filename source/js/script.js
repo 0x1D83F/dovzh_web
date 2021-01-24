@@ -3,5 +3,6 @@
 @@include('burger.js')
 @@include('image.adaptive.js')
 @@include('smart.js')
+@@include('replacer.js')
 @@include('listeners.js')
 

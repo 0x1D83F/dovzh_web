@@ -22,9 +22,8 @@ function sliderPaginationIndent(){
 
     if(clientWidth > 1024){
         setPaginationIndent( desktopPagination() )
-    }  else{
+    } else{
         setPaginationIndent(90);
     }
-
-
 }
+

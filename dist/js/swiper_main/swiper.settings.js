@@ -1,4 +1,4 @@
-const main = new Swiper('.slider',{
+const mainSlider = new Swiper('.slider',{
     // autoplay: {
     //     delay: 2000,
     // },
@@ -15,18 +15,18 @@ const main = new Swiper('.slider',{
     },
     touchRatio: 0,
     simulateTouch: false,
-    loop: true
+    loop: true,
+
 })
 
-const about = new Swiper('.slider-about', {
+
+
+const aboutSlider = new Swiper('.slider-about', {
     navigation: {
         nextEl: '.about-nav-next',
         prevEl: '.about-nav-prev'
     },
-    spaceBetween: 150
+    spaceBetween: 150,
+    autoHeight: true,
+    loop: true
 })
-
-
-
-// const sliderChilds = highlightSlidersArrows('swiper-wrapper-about', 'about-nav-prev', 'about-nav-next' );
-// const sliderAbout = highlightSlidersArrows('smart-tape', 'smart-nav-prev', 'smart-nav-next' );

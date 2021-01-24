@@ -1275,7 +1275,7 @@ body {
 .burger__window .burger-window-content .burger-footer {
   width: 100%;
   position: absolute;
-  bottom: 0;
+  bottom: 60px;
   left: 0;
 }
 
@@ -1498,7 +1498,7 @@ body {
 }
 
 .events-wrapper {
-  background: url("../img/bg_main.png") 0 0/cover no-repeat;
+  background: url("../img/bg_main.jpg") 0 0/cover no-repeat;
   background-color: #291666;
   background-blend-mode: luminosity;
 }
@@ -2617,7 +2617,7 @@ body {
   }
 
   .slider-main .slide_main__content .slide_main__content-text .content-text__redirect-button {
-    margin-top: 70px;
+    margin-top: 60px;
   }
 
   .slider .swiper__next svg,

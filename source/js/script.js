@@ -3,6 +3,6 @@
 @@include('burger.js')
 @@include('image.adaptive.js')
 @@include('smart.js')
-@@include('replacer.js')
+@@include('scrollIntoView.js')
 @@include('listeners.js')
 

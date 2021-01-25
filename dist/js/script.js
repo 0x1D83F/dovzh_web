@@ -177,12 +177,18 @@ function smart() {
 
 }
 
-function clubsAdaptiveReplacer(){
-    const container = document.querySelector('.children_info');
-    let img = document.querySelector('.children_image').outerHTML;
-    const text = document.querySelector('.children_info-more').outerHTML;
+function scrollTo(elem){
+
 }
-clubsAdaptiveReplacer();
+// function defineClick(event){
+//     const target = event.target.getAttribute('data-anchor');
+//     scrollTo()
+// }
+document.querySelector('.header-wrapper').addEventListener('click',(event) => {
+    event.preventDefault();
+    let target = event.target.getAttribute('data-type')
+    document.querySelector(`#${target}`).scrollIntoView({block: "start", behavior: "smooth"});
+})
 window.addEventListener('resize', sliderPaginationIndent)
 window.addEventListener('resize', smart)
 window.addEventListener('load', sliderPaginationIndent)

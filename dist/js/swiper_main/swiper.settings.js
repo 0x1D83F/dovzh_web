@@ -19,8 +19,6 @@ const mainSlider = new Swiper('.slider',{
 
 })
 
-
-
 const aboutSlider = new Swiper('.slider-about', {
     navigation: {
         nextEl: '.about-nav-next',

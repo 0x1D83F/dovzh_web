@@ -5,3 +5,8 @@ function burgerFunctional(){
     document.body.classList.toggle('_unlock');
     document.body.classList.toggle('_lock');
 }
+
+function adaptiveHeighForMobileBurgerMenu(){
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}

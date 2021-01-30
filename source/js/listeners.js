@@ -1,9 +1,16 @@
-window.addEventListener('resize', sliderPaginationIndent)
-window.addEventListener('resize', smart)
-window.addEventListener('load', sliderPaginationIndent)
 window.addEventListener('load', () => {
+    headerAnimation();
+    sliderAnimation()
+    adaptiveHeighForMobileBurgerMenu();
+    swiperContentHeight();
+    sliderPaginationIndent();
+    smart()
 
 })
-
-window.addEventListener('load', smart)
+window.addEventListener('resize', () => {
+    adaptiveHeighForMobileBurgerMenu();
+    swiperContentHeight();
+    sliderPaginationIndent();
+    smart();
+})
 document.querySelector('.burger__close').addEventListener('click', burgerFunctional)

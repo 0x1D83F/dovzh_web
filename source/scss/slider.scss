@@ -13,6 +13,13 @@
             position: relative;
             top: 28.57vh;
             z-index: 3;
+
+            .slide_main__content-type{
+                margin-bottom: 94px;
+            }
+            .slide_main__content-type img{
+                max-width: 554px;
+            }
         }
 
         .slider_content{
@@ -74,39 +81,53 @@
 
         .slide_main__content-text{
 
+            .content-text__date,
+            .content-text__title,
+            .content-text__discription{
+                overflow: hidden;
+            }
+            .content-text__date span,
+            .content-text__title h2,
+            .content-text__discription p{
+                transition: transform .4s cubic-bezier(.15,.14,.33,1.52);
+                //transition: transform .6s cubic-bezier(.15,.14,.4,1.4);
+                transform: translateY(101%);
+            }
+
             .content-text__date{
                 padding: 0;
                 margin: 0;
                 user-select: text!important;
             }
             .content-text__date span{
+                display: inline-block;
                 font-weight: 300;
                 font-size: 2em;
                 user-select: text!important;
+
             }
             .content-text__title{
-                max-width: 42.5em;
+                max-width: 51em;
                 margin: 51px 0 41px 0;
             }
             .content-text__title h2{
                 font-size: 5.714em;
                 line-height: 1.175em;
-                max-width: 42.5em;
                 font-weight: 300;
                 text-transform: uppercase;
-                font-family: 'Tenor Sans', sans-serif;
                 color: #D8CDA9;
 
             }
             .content-text__discription p{
                 font-size: 1.57em;
                 line-height: 1.181em;
-                max-width: 14.72em;
+                //max-width: 14.72em;
             }
             .content-text__redirect-button{
-                margin-top: 170px;
-                //position: absolute;
-                //bottom: 0;
+                //margin-top: 200px;
+                position: absolute;
+                bottom: 0;
+
             }
             .content-text__redirect-button a{
                 font-size: 1.85em;
@@ -116,6 +137,9 @@
                 text-decoration: underline;
                 color: #E1CB82;
                 text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+                opacity: 0;
+                transition: opacity 1s cubic-bezier(.12,.52,.81,1.07);
+
             }
 
         }
@@ -135,6 +159,8 @@
     //Pagination
     .swiper-pagination{
         position: relative !important;
+        display: flex;
+        align-items: center;
 
     }
     .pagination__line{

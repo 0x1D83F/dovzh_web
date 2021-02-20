@@ -1,4 +1,4 @@
-const main = new Swiper('.slider',{
+const mainSlider = new Swiper('.slider',{
     // autoplay: {
     //     delay: 2000,
     // },
@@ -14,43 +14,17 @@ const main = new Swiper('.slider',{
         },
     },
     touchRatio: 0,
-    simulateTouch: false
+    simulateTouch: false,
+    loop: true,
+
 })
 
-const about = new Swiper('.slider-about', {
+const aboutSlider = new Swiper('.slider-about', {
     navigation: {
         nextEl: '.about-nav-next',
         prevEl: '.about-nav-prev'
     },
+    spaceBetween: 150,
+    autoHeight: true,
+    loop: true
 })
-
-
-// function arrowsHighlightForSwitch(){
-//     const prevButton = document.querySelector('.swiper__prev_sett');
-//     const nextButton = document.querySelector('.swiper__next_sett');
-//
-//     let prevButtonPath = document.querySelector('.swiper__prev_sett svg path');
-//     let nextButtonPath = document.querySelector('.swiper__next_sett svg path');
-//
-//     function defineActiveSlide(){
-//         const firstSlide = document.querySelector('.swiper-pagination').firstElementChild;
-//         const lastSlide = document.querySelector('.swiper-pagination').lastElementChild;
-//
-//         if(!firstSlide.classList.contains('swiper-pagination-bullet-active')){
-//             prevButtonPath.setAttribute('fill-opacity', '0.8')
-//         }else{
-//             prevButtonPath.setAttribute('fill-opacity', '0.3')
-//         }
-//
-//         if(!lastSlide.classList.contains('swiper-pagination-bullet-active')){
-//             nextButtonPath.setAttribute('fill-opacity', '0.8')
-//         }else{
-//             nextButtonPath.setAttribute('fill-opacity', '0.3')
-//         }
-//
-//     }
-//     nextButton.addEventListener('click', defineActiveSlide)
-//     prevButton.addEventListener('click', defineActiveSlide)
-// }
-//
-// arrowsHighlightForSwitch();

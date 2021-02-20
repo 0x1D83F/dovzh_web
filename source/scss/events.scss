@@ -2,7 +2,12 @@
     @include back;
 
     .events{
+        overflow: hidden;
         padding-bottom: 87px;
+        .events_line, .events_header .events_header_title{
+            transform: translateX(-100%);
+            transition: transform 1s linear;
+        }
         .events-content_wrapper{
             padding: 0 30px;
         }
@@ -12,6 +17,7 @@
 
 
             .events_header_title{
+                transition: transform .3s cubic-bezier(.075,.82,.165,1);
             }
             .events_header_title h2{
                @include big_title;
@@ -21,6 +27,7 @@
             flex-wrap: wrap;
             margin-top: 71.5px;
 
+
             .events__item{
                 margin-right: 30px;
                 margin-bottom: 30px;
@@ -29,7 +36,6 @@
                 max-width: 350px;
                 height: 350px;
                 max-height: 350px;
-                //flex: 33%;
                 flex: 1 1 calc(100% / 3 - 60px);
 
 
@@ -49,8 +55,6 @@
                     .events__item-info__title{
                         position: absolute;
                         bottom: 60px;
-                        //margin-top: 180px;
-                        //margin-top: auto;
                     }
                     .events__item-info__title h2{
                         color: #C7B372;
@@ -97,12 +101,20 @@
                         font-size: 1em;
                         line-height: 1.142em;
                     }
-                    .events__item-additional__line{
-                        margin: 152px 0 25px 0;
+                    //152
+                    .events__item-additional-link{
+                        position: absolute;
                         width: 100%;
-                        height: 1px;
-                        background-color: rgba(255, 255, 255, 0.3);
+                        bottom: 0;
+                        margin: 0px 25px 25px 0;
+                        .events__item-additional__line{
+                            margin-bottom: 25px;
+                            width: calc(100% - 54px);
+                            height: 1px;
+                            background-color: rgba(255, 255, 255, 0.3);
+                        }
                     }
+
                 }
                 &:hover .events__item-additional{
                     transform: translateY(0%);

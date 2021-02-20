@@ -1,15 +1,38 @@
 function sliderPaginationIndent(){
     const button = document.querySelector('.content-text__redirect-button');
     const pagination = document.querySelector('.slider__nav')
+    const clientWidth = document.documentElement.clientWidth || window.innerWidth;
+    const scrollTop = document.documentElement.scrollTop;
+    const sliderHeight = document.querySelector('.slider').offsetHeight;
+    const adminbar = document.querySelector('#wpadminbar');
+    const adminbarHeight = adminbar == null ? 0 : adminbar.offsetHeight;
 
-    let scrollTop = document.documentElement.scrollTop;
-    let distanceToTop = button.getBoundingClientRect().top + scrollTop;
+    function setPaginationIndent(value){
+        pagination.style.bottom = `${value}px`;
+    }
 
-    let sliderHeight = document.querySelector('.slider').offsetHeight;
+    function desktopPagination(){
+        let distanceToTop = button.getBoundingClientRect().top + scrollTop;
+        let buttonHeight = button.offsetHeight;
+        let calc = sliderHeight - (distanceToTop + buttonHeight) + adminbarHeight;
+        return calc
+    }
 
-    let buttonHeight = button.offsetHeight;
 
+    if(clientWidth > 1024){
+        setPaginationIndent( desktopPagination() )
+    }else{
+        setPaginationIndent(100);
+    }
+    if(sliderHeight < 590){
+        setPaginationIndent(50);
 
-    let calc = sliderHeight - (distanceToTop + buttonHeight) ;
-    pagination.style.bottom = `${calc}px`;
+    }
+    if(sliderHeight < 490){
+        setPaginationIndent(30);
+
+    }
+    let bottom = getComputedStyle(document.querySelector('.slider__nav'), null).getPropertyValue("bottom");
+    let ticket = document.querySelector('.content-text__redirect-button a');
 }
+

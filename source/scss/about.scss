@@ -17,6 +17,7 @@
         }
         .about-header_abb{
             align-self: flex-end;
+            padding-left: 10px;
 
             p{
                 font-size: 1.428em;
@@ -32,6 +33,13 @@
 
     .about-content{
         padding-left: 93px;
+
+        .about-content__item:first-child{
+            padding-right: 10px;
+        }
+        .about-content__item:last-child{
+            padding-left: 10px;
+        }
 
         .about-content__slider{
             margin-top: 86px;
@@ -80,10 +88,9 @@
             }
             .about-content__info_img{
                 max-width: 445px;
-                height: 256px;
             }
             .about-content__info_img img{
-                //@include image;
+                max-width: 100%;
             }
         }
 

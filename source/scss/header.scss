@@ -5,6 +5,8 @@
     width: 100%;
     //background: linear-gradient(90deg, rgba(41, 22, 102, 0.2) 0%, rgba(41, 22, 102, 0.8) 77.6%, rgba(43, 29, 112, 0.2) 89.06%, rgba(41, 22, 102, 0.2) 100%);
     //backdrop-filter: blur(10px);
+    transform: translateY(-110%);
+    transition: transform .6s cubic-bezier(.075,.82,.165,1);
     background: rgba(41, 22, 102, 0.5);
     z-index: 4;
 
@@ -20,6 +22,7 @@
 
 .header__content{
     padding: 18px 0 16px 0;
+    align-items: center;
 
 }
 
@@ -81,7 +84,7 @@
 .link_pseudo:hover::before{
     width: 100%;
 }
-.list_item:nth-child(3){
+.list_item:nth-child(4){
     margin-right: 60px;
 }
 .list_item:last-child{
